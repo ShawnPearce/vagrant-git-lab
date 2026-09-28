@@ -6,8 +6,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     set -e
     apt-get update
-    apt-get install -y apache2
-    echo "Hello from Vagrant" > /var/www/html/index.html
+    apt-get install -y apache2 git
+    echo "Hello from the updated Vagrant setup" > /var/www/html/index.html
     systemctl enable --now apache2
   SHELL
 end
